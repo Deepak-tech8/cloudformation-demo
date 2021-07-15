@@ -9,7 +9,7 @@ let allowed_security_groups = [sg-02e1e8b8936acf63b,sg-03e8c6f1e6a6228e4]
 AWS::EC2::Instance AvailabilityZone IN %allowed_azs
 AWS::EC2::Instance ImageId == ami-0323c3dd2da7fb37d
 AWS::EC2::Instance InstanceType IN %allowed_ec2_instance_types
-AWS::EC2::Instance SecurityGroupIds == ["sg-02e1e8b8936acf63b"]
+AWS::EC2::Instance SecurityGroupIds IN %allowed_security_groups
 AWS::EC2::Instance SubnetId == subnet-f988def6
 
 #EBS Policies
