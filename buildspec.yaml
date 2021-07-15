@@ -10,7 +10,9 @@ phases:
       - apt-get update
       - apt-get install build-essential -y
       - apt-get install cargo -y
-      - apt-get install git -y
+      - apt-get install git -y  
+      - apt-get install jq git -y -q
+      - gem install cfn-nag
   pre_build:
     commands:
       - echo "Setting up the environment for AWS CloudFormation Guard"
@@ -29,6 +31,8 @@ phases:
        - echo "Validate CloudFormation template with cfn-guard tool"
        - echo "More information https://github.com/aws-cloudformation/cloudformation-guard/blob/master/cfn-guard/README.md"
        - cfn-guard-linux/cfn-guard check --rule_set $CF_ORG_RULESET --template $CF_TEMPLATE --strict-checks
+       - cd ./
+       - cfn_nag_scan -i cfn_template_file_example.yaml
 artifacts:
   files:
     - cfn_template_file_example.yaml
