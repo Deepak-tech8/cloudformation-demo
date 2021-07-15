@@ -8,7 +8,7 @@ Resources:
     Properties:
       ImageId: 'ami-0323c3dd2da7fb37d'
       AvailabilityZone: 'us-east-1f'
-      KeyName: "key_mitchell"
+      KeyName: 'key_mitchell'
       InstanceType: 't3.micro'
       SubnetId: 'subnet-f988def6'
       SecurityGroupIds:
