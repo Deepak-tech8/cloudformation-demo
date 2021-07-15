@@ -26,13 +26,13 @@ phases:
        - wget https://github.com/aws-cloudformation/cloudformation-guard/releases/download/1.0.0/cfn-guard-linux-1.0.0.tar.gz
        - echo "Extract cfn-guard"
        - tar xvf cfn-guard-linux-1.0.0.tar.gz .
+       - cd ./
+       - cfn_nag_scan -i cfn_template_file_example.yaml
   post_build:
     commands:
        - echo "Validate CloudFormation template with cfn-guard tool"
        - echo "More information https://github.com/aws-cloudformation/cloudformation-guard/blob/master/cfn-guard/README.md"
        - cfn-guard-linux/cfn-guard check --rule_set $CF_ORG_RULESET --template $CF_TEMPLATE --strict-checks
-       - cd ./
-       - cfn_nag_scan -i cfn_template_file_example.yaml
 artifacts:
   files:
     - cfn_template_file_example.yaml
