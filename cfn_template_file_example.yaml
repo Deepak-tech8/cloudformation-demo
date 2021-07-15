@@ -12,7 +12,7 @@ Resources:
       InstanceType: 't3.micro'
       SubnetId: 'subnet-f988def6'
       SecurityGroupIds:
-        - '	sg-02e1e8b8936acf63b'
+        - 'sg-02e1e8b8936acf63b'
       Volumes:
          - 
           Device: '/dev/sdf'
