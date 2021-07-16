@@ -20,7 +20,7 @@ Resources:
  EBSVolume:
    Type: AWS::EC2::Volume
    Properties:
-     Size: 8
+     Size: 80
      AvailabilityZone: 'us-east-1f'
      Encrypted: true
      VolumeType: gp2
