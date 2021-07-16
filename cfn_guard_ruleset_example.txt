@@ -14,6 +14,7 @@ AWS::EC2::Instance SecurityGroupIds == ["sg-02e1e8b8936acf63b"]
 AWS::EC2::Instance SubnetId == subnet-f988def6
 
 
+
 #EBS Policies
 AWS::EC2::Volume AvailabilityZone == us-east-1f
 AWS::EC2::Volume Encrypted == False
