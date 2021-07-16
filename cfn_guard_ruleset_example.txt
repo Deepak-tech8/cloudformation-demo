@@ -13,11 +13,11 @@ AWS::EC2::Instance ImageId IN %allowed_ImageIds
 AWS::EC2::Instance InstanceType IN %allowed_ec2_instance_types
 AWS::EC2::Instance SecurityGroupIds == ["sg-02e1e8b8936acf63b"]
 AWS::EC2::Instance SubnetId == subnet-f988def6
-AWS::EC2::Instance DeleteOnTermination == False
+#AWS::EC2::Instance DeleteOnTermination == False
 
 
 #EBS Policies
 AWS::EC2::Volume AvailabilityZone == us-east-1f
 AWS::EC2::Volume Encrypted == False
-AWS::EC2::Volume Size == 8 |OR| AWS::EC2::Volume Size == 10
+AWS::EC2::Volume Size == 7 |OR| AWS::EC2::Volume Size == 10
 AWS::EC2::Volume VolumeType == gp2
